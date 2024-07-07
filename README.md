@@ -3,7 +3,7 @@
 #### PullToRefresh
 ![PullToRefresh Animation](./Images/PullToRefresh.gif)
 
-To add `PullToRefresh` to your screen, you need to set the `pullToRefresh` value for your table/collection. You can use `RefreshControl` for this or create your own (link to Creating a Custom RefreshControl):
+To add `PullToRefresh` to your screen, you need to set the `pullToRefresh` value for your table/collection. You can use `RefreshControl` for this or [create your own](#creating-a-custom-refreshcontrol):
 ```swift 
 collection_name.pullToRefresh = RefreshControl()
 ```
@@ -33,7 +33,7 @@ collection_name.setRefreshControlStaticInsetTop(value: 10.0)
 #### Automatic Pagination
 ![Pagination Animation](./Images/Pagination.gif)
 
-To add `Automatic Pagination` to your screen, you need to set the `paginationRefresh` value for your table/collection. You can use `RefreshControl` for this or create your own (link to Creating a Custom RefreshControl):
+To add `Automatic Pagination` to your screen, you need to set the `paginationRefresh` value for your table/collection. You can use `RefreshControl` for this or [create your own](#creating-a-custom-refreshcontrol):
 ```swift 
 collection_name.paginationRefresh = RefreshControl()
 ```
@@ -64,25 +64,21 @@ collection_name.reloadPaginationRefresh()
 
 To create a custom RefreshControl, you need to inherit from `BaseRefreshControl` and implement the required methods:
 
-- 
 ```swift 
 func setProgress(to newProgress: CGFloat)
 ```
 This method is called when the user pulls the screen down to allow you to change the appearance of your Refresh Control.
 
-- 
 ```swift 
 func startRefreshing()
 ```
 This method is called when the user reaches the data-fetching point, and you need to show an animation during data retrieval.
 
-- 
 ```swift 
 func endRefreshing()
 ```
 This method is called when you need to stop the animation.
 
-- 
 ```swift 
 func resume()
 ```
