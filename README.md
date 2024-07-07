@@ -20,7 +20,7 @@ To install `RefreshKit` using SPM, add the following to your `Package.swift` fil
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/atsed/RefreshKit.git", from: "1.0.0")
+    .package(url: "https://github.com/atsed/RefreshKit.git", from: "1.0.1")
 ]
 ```
 
@@ -38,7 +38,7 @@ Then, in the target dependencies section, include `RefreshKit`:
 To install `RefreshKit` using CocoaPods, add the following to your `Podfile`:
 
 ```ruby
-pod 'RefreshKit', '~> 1.0.0'
+pod 'RefreshKit'
 ```
 
 Then run:
