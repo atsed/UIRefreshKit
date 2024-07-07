@@ -2,6 +2,23 @@
 
 `RefreshKit` is a custom library that provides customizable pull-to-refresh and automatic pagination functionality for `UIScrollView`.
 
+<p align="center">
+  <img src="./Images/PullToRefresh.mov" alt="PullToRefresh Animation" width="200"/>
+  <img src="./Images/Pagination.mov" alt="Pagination Animation" width="200"/>
+</p>
+
+<p align="center">
+  <a href="https://swift.org">
+    <img src="https://img.shields.io/badge/swift-5.7%20%7C%205.8%20%7C%205.9-orange.svg?style=flat" alt="Swift Versions"/>
+  </a>
+  <a href="https://cocoapods.org/pods/RefreshKit">
+    <img src="https://img.shields.io/cocoapods/v/RefreshKit.svg?style=flat" alt="CocoaPods"/>
+  </a>
+  <a href="https://github.com/yourusername/RefreshKit">
+    <img src="https://img.shields.io/badge/Swift_Package_Manager-compatible-brightgreen.svg?style=flat" alt="SPM"/>
+  </a>
+</p>
+
 ## Features
 
 - Customizable Pull-to-Refresh
@@ -183,16 +200,3 @@ class ViewController: UIViewController {
 
 `RefreshKit` is available under the MIT license. See the [LICENSE](LICENSE) file for more info.
 ```
-
-### Описание
-
-Этот `README.md` файл включает:
-- Название библиотеки (`RefreshKit`).
-- Список возможностей.
-- Подробные инструкции по установке через Swift Package Manager и CocoaPods.
-- Примеры использования для pull-to-refresh и автоматической пагинации.
-- Инструкции по созданию кастомного `RefreshControl`.
-- Пример использования библиотеки в контроллере представления.
-- Информацию о лицензии.
-
-Этот формат обеспечит понятное, информативное и привлекательное описание для вашей библиотеки, что облегчит разработчикам интеграцию и использование `RefreshKit`.
