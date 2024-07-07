@@ -19,7 +19,7 @@ let package = Package(
             path: "Sources"
         ),
         .testTarget(
-            name: "RefreshKit",
+            name: "RefreshKitTests",
             dependencies: ["RefreshKit"],
             path: "Tests"
         ),
