@@ -11,16 +11,16 @@ open class BaseRefreshControl: UIView {
 
     // MARK: - Properties
 
-    internal var isRefreshing: Bool = false
+    public var isRefreshing: Bool = false
 
     // MARK: - Init
 
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         setupNotifications()
     }
 
-    required init?(coder: NSCoder) {
+    public required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
