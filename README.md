@@ -1,7 +1,8 @@
 # RefreshKit
-[![Swift](https://img.shields.io/badge/Swift-5.7_5.8_5.9-orange?style=flat-square)](https://img.shields.io/badge/Swift-5.7_5.8_5.9-Orange?style=flat-square)
+[![Languages](https://img.shields.io/badge/languages-Swift%20%7C%20ObjC-red.svg)](https://img.shields.io/badge/languages-Swift%20%7C%20ObjC-red.svg)
 [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/Alamofire.svg?style=flat-square)](https://img.shields.io/cocoapods/v/Alamofire.svg)
 [![Swift Package Manager](https://img.shields.io/badge/Swift_Package_Manager-compatible-orange?style=flat-square)](https://img.shields.io/badge/Swift_Package_Manager-compatible-orange?style=flat-square)
+[![License MIT](https://img.shields.io/cocoapods/l/RefreshKit.svg?style=flat)](https://raw.githubusercontent.com/atsed/RefreshKit/main/LICENSE)
 
 `RefreshKit` is a custom library that provides customizable pull-to-refresh and automatic pagination functionality for `UIScrollView`.
 
