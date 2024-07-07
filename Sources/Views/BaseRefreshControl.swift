@@ -1,13 +1,13 @@
 //
 //  BaseRefreshControl.swift
-//  PullToRefresh&Pagination
+//  RefreshKit
 //
 //  Created by Egor Korotkii on 7/7/24.
 //
 
 import UIKit
 
-public class BaseRefreshControl: UIView {
+open class BaseRefreshControl: UIView {
 
     // MARK: - Properties
 
@@ -26,7 +26,7 @@ public class BaseRefreshControl: UIView {
 
     // MARK: - Life cycle
 
-    public override func didMoveToWindow() {
+    open override func didMoveToWindow() {
         super.didMoveToWindow()
 
         resume()
@@ -41,21 +41,21 @@ public class BaseRefreshControl: UIView {
                                                object: nil)
     }
 
-    // MARK: - Public Flow
+    // MARK: - Open Flow
 
-    public func setProgress(to newProgress: CGFloat) {
+    open func setProgress(to newProgress: CGFloat) {
         fatalError("Must be overridden in the subclasses")
     }
 
-    public func startRefreshing() {
+    open func startRefreshing() {
         fatalError("Must be overridden in the subclasses")
     }
 
-    public func endRefreshing() {
+    open func endRefreshing() {
         fatalError("Must be overridden in the subclasses")
     }
 
-    public func resume() {
+    open func resume() {
         fatalError("Must be overridden in the subclasses")
     }
 

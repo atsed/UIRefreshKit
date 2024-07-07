@@ -1,6 +1,6 @@
 //
 //  UIScrollView+PullToRefresh.swift
-//  PullToRefresh&Pagination
+//  RefreshKit
 //
 //  Created by Egor Korotkii on 7/6/24.
 //

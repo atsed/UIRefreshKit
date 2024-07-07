@@ -1,85 +1,198 @@
-### PullToRefresh and Pagination
+# RefreshKit
 
-#### PullToRefresh
+`RefreshKit` is a custom library that provides customizable pull-to-refresh and automatic pagination functionality for `UIScrollView`.
+
+## Features
+
+- Customizable Pull-to-Refresh
+- Automatic Pagination
+- Easy Integration
+
+## Installation
+
+### Swift Package Manager (SPM)
+
+To install `RefreshKit` using SPM, add the following to your `Package.swift` file:
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/atsed/RefreshKit.git", from: "1.0.0")
+]
+```
+
+Then, in the target dependencies section, include `RefreshKit`:
+
+```swift
+.target(
+    name: "YourTargetName",
+    dependencies: ["RefreshKit"]
+)
+```
+
+### CocoaPods
+
+To install `RefreshKit` using CocoaPods, add the following to your `Podfile`:
+
+```ruby
+pod 'RefreshKit', '~> 1.0.0'
+```
+
+Then run:
+
+```bash
+pod install
+```
+
+## Usage
+
+### PullToRefresh
+
 ![PullToRefresh Animation](./Images/PullToRefresh.mov)
 
-To add `PullToRefresh` to your screen, you need to set the `pullToRefresh` value for your table/collection. You can use `RefreshControl` for this or [create your own](#creating-a-custom-refreshcontrol):
-```swift 
-collection_name.pullToRefresh = RefreshControl()
+To add `PullToRefresh` to your screen, you need to set the `pullToRefresh` property for your table/collection view. You can use `RefreshControl` for this or [create your own](#creating-a-custom-refreshcontrol):
+
+```swift
+collectionView.pullToRefresh = RefreshControl()
 ```
 
 The action to be performed when `PullToRefresh` is triggered is wrapped in a block:
-```swift 
-collection_name.refreshingControlBlock = {
-    'action'
+
+```swift
+collectionView.refreshingControlBlock = {
+    // Your action
 }
 ```
 
-To check if the `PullToRefresh` animation is currently happening in the table/collection, you can use the property:
-```swift 
-collection_name.isControlRefreshing
+To check if the `PullToRefresh` animation is currently happening in the table/collection view, you can use the `isControlRefreshing` property:
+
+```swift
+if collectionView.isControlRefreshing {
+    // Do something
+}
 ```
 
-To end the `PullToRefresh` animation, call the method:
-```swift 
-collection_name.endControlRefreshing()
+To end the `PullToRefresh` animation, call the `endControlRefreshing` method:
+
+```swift
+collectionView.endControlRefreshing()
 ```
 
-If you need to add a static inset from the top from which the `PullToRefresh` animation starts, use the method:
-```swift 
-collection_name.setRefreshControlStaticInsetTop(value: 10.0)
+If you need to add a static inset from the top from which the `PullToRefresh` animation starts, use the `setRefreshControlStaticInsetTop` method:
+
+```swift
+collectionView.setRefreshControlStaticInsetTop(value: 10.0)
 ```
 
-#### Automatic Pagination
+### Automatic Pagination
+
 ![Pagination Animation](./Images/Pagination.mov)
 
-To add `Automatic Pagination` to your screen, you need to set the `paginationRefresh` value for your table/collection. You can use `RefreshControl` for this or [create your own](#creating-a-custom-refreshcontrol):
-```swift 
-collection_name.paginationRefresh = RefreshControl()
+To add `Automatic Pagination` to your screen, you need to set the `paginationRefresh` property for your table/collection view. You can use `RefreshControl` for this or [create your own](#creating-a-custom-refreshcontrol):
+
+```swift
+collectionView.paginationRefresh = RefreshControl()
 ```
 
 The action to be performed when `Automatic Pagination` is triggered is wrapped in a block:
-```swift 
-collection_name.paginationRefreshingBlock = {
-    'action'
+
+```swift
+collectionView.paginationRefreshingBlock = {
+    // Your action
 }
 ```
 
-To check if the `Automatic Pagination` animation is currently happening in the table/collection, you can use the property:
-```swift 
-collection_name.isPaginationRefreshing
+To check if the `Automatic Pagination` animation is currently happening in the table/collection view, you can use the `isPaginationRefreshing` property:
+
+```swift
+if collectionView.isPaginationRefreshing {
+    // Do something
+}
 ```
 
-If you need to disable `Automatic Pagination`, for instance, in case of an error or when loading the last page, call the method:
-```swift 
-collection_name.disablePaginationRefresh()
+If you need to disable `Automatic Pagination`, for instance, in case of an error or when loading the last page, call the `disablePaginationRefresh` method:
+
+```swift
+collectionView.disablePaginationRefresh()
 ```
 
-To resume `Automatic Pagination`, for instance, after recovering from an error, call the method:
-```swift 
-collection_name.reloadPaginationRefresh()
+To resume `Automatic Pagination`, for instance, after recovering from an error, call the `reloadPaginationRefresh` method:
+
+```swift
+collectionView.reloadPaginationRefresh()
 ```
 
-#### Creating a Custom RefreshControl
+### Creating a Custom RefreshControl
 
-To create a custom RefreshControl, you need to inherit from `BaseRefreshControl` and implement the required methods:
+To create a custom `RefreshControl`, you need to inherit from `BaseRefreshControl` and implement the required methods:
 
-```swift 
-func setProgress(to newProgress: CGFloat)
+```swift
+class CustomRefreshControl: BaseRefreshControl {
+    override func setProgress(to newProgress: CGFloat) {
+        // Update the appearance of your custom refresh control based on the progress
+    }
+
+    override func startRefreshing() {
+        // Start the refreshing animation
+    }
+
+    override func endRefreshing() {
+        // Stop the refreshing animation
+    }
+
+    override func resume() {
+        // Resume or complete the animation based on the current state
+    }
+}
 ```
-This method is called when the user pulls the screen down to allow you to change the appearance of your Refresh Control.
 
-```swift 
-func startRefreshing()
-```
-This method is called when the user reaches the data-fetching point, and you need to show an animation during data retrieval.
+## Example
 
-```swift 
-func endRefreshing()
-```
-This method is called when you need to stop the animation.
+Here is a basic example of how to use `RefreshKit` in a view controller:
 
-```swift 
-func resume()
+```swift
+import UIKit
+import RefreshKit
+
+class ViewController: UIViewController {
+
+    @IBOutlet weak var collectionView: UICollectionView!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        collectionView.pullToRefresh = RefreshControl()
+        collectionView.refreshingControlBlock = {
+            // Refresh action
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                self.collectionView.endControlRefreshing()
+            }
+        }
+
+        collectionView.paginationRefresh = RefreshControl()
+        collectionView.paginationRefreshingBlock = {
+            // Pagination action
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                self.collectionView.reloadPaginationRefresh()
+            }
+        }
+    }
+}
 ```
-This method is called when you need to continue or complete the animation depending on the current state. For example, if the user leaves the screen and then returns, but the data has not yet been loaded.
+
+## License
+
+`RefreshKit` is available under the MIT license. See the [LICENSE](LICENSE) file for more info.
+```
+
+### Описание
+
+Этот `README.md` файл включает:
+- Название библиотеки (`RefreshKit`).
+- Список возможностей.
+- Подробные инструкции по установке через Swift Package Manager и CocoaPods.
+- Примеры использования для pull-to-refresh и автоматической пагинации.
+- Инструкции по созданию кастомного `RefreshControl`.
+- Пример использования библиотеки в контроллере представления.
+- Информацию о лицензии.
+
+Этот формат обеспечит понятное, информативное и привлекательное описание для вашей библиотеки, что облегчит разработчикам интеграцию и использование `RefreshKit`.

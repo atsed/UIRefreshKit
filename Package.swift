@@ -2,25 +2,25 @@
 import PackageDescription
 
 let package = Package(
-    name: "PullToRefresh&Pagination",
+    name: "RefreshKit",
     platforms: [
         .iOS(.v12)
     ],
     products: [
         .library(
-            name: "PullToRefresh&Pagination",
-            targets: ["PullToRefresh&Pagination"]
+            name: "RefreshKit",
+            targets: ["RefreshKit"]
         ),
     ],
     targets: [
         .target(
-            name: "PullToRefresh&Pagination",
+            name: "RefreshKit",
             dependencies: [],
             path: "Sources"
         ),
         .testTarget(
-            name: "PullToRefresh&PaginationTests",
-            dependencies: ["PullToRefresh&Pagination"],
+            name: "RefreshKit",
+            dependencies: ["RefreshKit"],
             path: "Tests"
         ),
     ]
