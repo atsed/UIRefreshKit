@@ -1,23 +1,9 @@
 # RefreshKit
+[![Swift](https://img.shields.io/badge/Swift-5.7_5.8_5.9-orange?style=flat-square)](https://img.shields.io/badge/Swift-5.7_5.8_5.9-Orange?style=flat-square)
+[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/Alamofire.svg?style=flat-square)](https://img.shields.io/cocoapods/v/Alamofire.svg)
+[![Swift Package Manager](https://img.shields.io/badge/Swift_Package_Manager-compatible-orange?style=flat-square)](https://img.shields.io/badge/Swift_Package_Manager-compatible-orange?style=flat-square)
 
 `RefreshKit` is a custom library that provides customizable pull-to-refresh and automatic pagination functionality for `UIScrollView`.
-
-<p align="center">
-  <img src="./Images/PullToRefresh.mov" alt="PullToRefresh Animation" width="200"/>
-  <img src="./Images/Pagination.mov" alt="Pagination Animation" width="200"/>
-</p>
-
-<p align="center">
-  <a href="https://swift.org">
-    <img src="https://img.shields.io/badge/swift-5.7%20%7C%205.8%20%7C%205.9-orange.svg?style=flat" alt="Swift Versions"/>
-  </a>
-  <a href="https://cocoapods.org/pods/RefreshKit">
-    <img src="https://img.shields.io/cocoapods/v/RefreshKit.svg?style=flat" alt="CocoaPods"/>
-  </a>
-  <a href="https://github.com/yourusername/RefreshKit">
-    <img src="https://img.shields.io/badge/Swift_Package_Manager-compatible-brightgreen.svg?style=flat" alt="SPM"/>
-  </a>
-</p>
 
 ## Features
 
