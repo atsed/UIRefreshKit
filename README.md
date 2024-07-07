@@ -4,7 +4,7 @@
 [![Swift Package Manager](https://img.shields.io/badge/Swift_Package_Manager-compatible-orange?style=flat-square)](https://img.shields.io/badge/Swift_Package_Manager-compatible-orange?style=flat-square)
 [![License MIT](https://img.shields.io/cocoapods/l/RefreshKit.svg?style=flat)](https://raw.githubusercontent.com/atsed/RefreshKit/main/LICENSE)
 
-`RefreshKit` is a custom library that provides customizable pull-to-refresh and automatic pagination functionality for `UIScrollView`.
+`RefreshKit` is a custom library that provides customizable pull-to-refresh and automatic pagination functionality for `UICollectionView` and `UITableView`.
 
 ## Features
 
