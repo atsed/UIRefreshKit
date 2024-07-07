@@ -165,18 +165,18 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         collectionView.pullToRefresh = RefreshControl()
-        collectionView.refreshingControlBlock = {
+        collectionView.refreshingControlBlock = { [weak self] in
             // PullToRefresh action
             DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-                self.collectionView.endControlRefreshing()
+                self?.collectionView.endControlRefreshing()
             }
         }
 
         collectionView.paginationRefresh = RefreshControl(size: .small, isHapticEnabled: false)
-        collectionView.paginationRefreshingBlock = {
+        collectionView.paginationRefreshingBlock = { [weak self] in
             // Pagination action
             DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-                self.collectionView.reloadPaginationRefresh()
+                self?.collectionView.reloadPaginationRefresh()
             }
         }
     }
