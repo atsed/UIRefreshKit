@@ -1,7 +1,7 @@
 ### PullToRefresh and Pagination
 
 #### PullToRefresh
-![PullToRefresh Animation](./Images/PullToRefresh.gif)
+![PullToRefresh Animation](./Images/PullToRefresh.mov)
 
 To add `PullToRefresh` to your screen, you need to set the `pullToRefresh` value for your table/collection. You can use `RefreshControl` for this or [create your own](#creating-a-custom-refreshcontrol):
 ```swift 
@@ -31,7 +31,7 @@ collection_name.setRefreshControlStaticInsetTop(value: 10.0)
 ```
 
 #### Automatic Pagination
-![Pagination Animation](./Images/Pagination.gif)
+![Pagination Animation](./Images/Pagination.mov)
 
 To add `Automatic Pagination` to your screen, you need to set the `paginationRefresh` value for your table/collection. You can use `RefreshControl` for this or [create your own](#creating-a-custom-refreshcontrol):
 ```swift 
