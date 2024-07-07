@@ -136,7 +136,7 @@ class CustomRefreshControl: BaseRefreshControl {
     }
 
     override func startRefreshing() {
-        // Start the refreshing animation
+        // Start the refreshing animation and the haptic
     }
 
     override func endRefreshing() {
@@ -166,13 +166,13 @@ class ViewController: UIViewController {
 
         collectionView.pullToRefresh = RefreshControl()
         collectionView.refreshingControlBlock = {
-            // Refresh action
+            // PullToRefresh action
             DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
                 self.collectionView.endControlRefreshing()
             }
         }
 
-        collectionView.paginationRefresh = RefreshControl()
+        collectionView.paginationRefresh = RefreshControl(size: .small, isHapticEnabled: false)
         collectionView.paginationRefreshingBlock = {
             // Pagination action
             DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
@@ -186,4 +186,3 @@ class ViewController: UIViewController {
 ## License
 
 `RefreshKit` is available under the MIT license. See the [LICENSE](LICENSE) file for more info.
-```
