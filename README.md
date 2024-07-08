@@ -20,7 +20,7 @@ To install `RefreshKit` using SPM, add the following to your `Package.swift` fil
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/atsed/RefreshKit.git", from: "1.0.2")
+    .package(url: "https://github.com/atsed/RefreshKit.git", from: "1.1.0")
 ]
 ```
 
@@ -62,29 +62,29 @@ collectionView.pullToRefresh = RefreshControl()
 The action to be performed when `PullToRefresh` is triggered is wrapped in a block:
 
 ```swift
-collectionView.refreshingControlBlock = {
+collectionView.pullToRefreshAction = {
     // Your action
 }
 ```
 
-To check if the `PullToRefresh` animation is currently happening in the table/collection view, you can use the `isControlRefreshing` property:
+To check if the `PullToRefresh` animation is currently happening in the table/collection view, you can use the `isPullToRefreshing` property:
 
 ```swift
-if collectionView.isControlRefreshing {
+if collectionView.isPullToRefreshing {
     // Do something
 }
 ```
 
-To end the `PullToRefresh` animation, call the `endControlRefreshing` method:
+To end the `PullToRefresh` animation, call the `endPullToRefresh` method:
 
 ```swift
-collectionView.endControlRefreshing()
+collectionView.endPullToRefresh()
 ```
 
-If you need to add a static inset from the top from which the `PullToRefresh` animation starts, use the `setRefreshControlStaticInsetTop` method:
+If you need to add a static inset from the top from which the `PullToRefresh` animation starts, use the `setPullToRefreshStaticInsetTop` method:
 
 ```swift
-collectionView.setRefreshControlStaticInsetTop(value: 10.0)
+collectionView.setPullToRefreshStaticInsetTop(value: 10.0)
 ```
 
 ### Automatic Pagination
@@ -100,7 +100,7 @@ collectionView.paginationRefresh = RefreshControl()
 The action to be performed when `Automatic Pagination` is triggered is wrapped in a block:
 
 ```swift
-collectionView.paginationRefreshingBlock = {
+collectionView.paginationRefreshAction = {
     // Your action
 }
 ```
@@ -165,15 +165,15 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         collectionView.pullToRefresh = RefreshControl()
-        collectionView.refreshingControlBlock = { [weak self] in
+        collectionView.pullToRefreshAction = { [weak self] in
             // PullToRefresh action
             DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-                self?.collectionView.endControlRefreshing()
+                self?.collectionView.endPullToRefresh()
             }
         }
 
         collectionView.paginationRefresh = RefreshControl(size: .small, isHapticEnabled: false)
-        collectionView.paginationRefreshingBlock = { [weak self] in
+        collectionView.paginationRefreshAction = { [weak self] in
             // Pagination action
             DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
                 self?.collectionView.reloadPaginationRefresh()

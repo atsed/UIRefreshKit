@@ -32,14 +32,14 @@ public extension UIScrollView {
     }
 
     @objc
-    var refreshingControlBlock: (() -> Void)? {
+    var pullToRefreshAction: (() -> Void)? {
         get {
-            withUnsafePointer(to: &AssociatedKeys.refreshingControlBlockKey) {
+            withUnsafePointer(to: &AssociatedKeys.pullToRefreshActionKey) {
                 objc_getAssociatedObject(self, $0) as? (() -> Void)? ?? nil
             }
         }
         set {
-            withUnsafePointer(to: &AssociatedKeys.refreshingControlBlockKey) {
+            withUnsafePointer(to: &AssociatedKeys.pullToRefreshActionKey) {
                 objc_setAssociatedObject(
                     self,
                     $0,
@@ -51,14 +51,14 @@ public extension UIScrollView {
     }
 
     @objc
-    private(set) var isControlRefreshing: Bool {
+    private(set) var isPullToRefreshing: Bool {
         get {
-            withUnsafePointer(to: &AssociatedKeys.isControlRefreshingKey) {
+            withUnsafePointer(to: &AssociatedKeys.isPullToRefreshingKey) {
                 objc_getAssociatedObject(self, $0) as? Bool ?? false
             }
         }
         set {
-            withUnsafePointer(to: &AssociatedKeys.isControlRefreshingKey) {
+            withUnsafePointer(to: &AssociatedKeys.isPullToRefreshingKey) {
                 objc_setAssociatedObject(
                     self,
                     $0,
@@ -182,13 +182,13 @@ public extension UIScrollView {
     // MARK: - Public Methods
 
     @objc
-    func endControlRefreshing() {
-        guard isControlRefreshing else {
+    func endPullToRefresh() {
+        guard isPullToRefreshing else {
             return
         }
 
         reloadPaginationRefresh()
-        isControlRefreshing = false
+        isPullToRefreshing = false
         UIView.animate(withDuration: 0.2) { [weak self] in
             self?.contentInset.top = (self?.basicContentInsetTop ?? .zero)
         }
@@ -248,10 +248,10 @@ public extension UIScrollView {
             let progressValue = -triggerOffset / (frame.height / 6)
             pullToRefresh.setProgress(to: progressValue)
 
-            if progressValue >= 1, !isControlRefreshing, isRefreshingFinished {
-                isControlRefreshing = true
+            if progressValue >= 1, !isPullToRefreshing, isRefreshingFinished {
+                isPullToRefreshing = true
                 isRefreshingFinished = false
-                refreshingControlBlock?()
+                pullToRefreshAction?()
                 pullToRefresh.startRefreshing()
             }
 
@@ -260,7 +260,7 @@ public extension UIScrollView {
                                 (pullToRefresh.frame.height +
                                 Constants.refreshInset * 2)
             if triggerOffset >= currentOffset,
-               isControlRefreshing,
+               isPullToRefreshing,
                contentInset.top != pullToRefresh.frame.height + Constants.refreshInset * 2 {
                 let newContentInsetTop = staticContentInsetTop + pullToRefresh.frame.height + Constants.refreshInset * 2
                 let newContentOffset = CGPoint(x: contentOffset.x,
@@ -268,7 +268,7 @@ public extension UIScrollView {
                 setContentOffset(newContentOffset, animated: false)
                 contentInset.top = newContentInsetTop
             }
-        } else if !isControlRefreshing, !isRefreshingFinished {
+        } else if !isPullToRefreshing, !isRefreshingFinished {
             isRefreshingFinished = true
             pullToRefresh.endRefreshing()
         }
@@ -280,7 +280,7 @@ public extension UIScrollView {
         guard let pullToRefresh else {
             return
         }
-        let refreshContainerHeight = isControlRefreshing ? pullToRefresh.frame.height + Constants.refreshInset * 2 : .zero
+        let refreshContainerHeight = isPullToRefreshing ? pullToRefresh.frame.height + Constants.refreshInset * 2 : .zero
 
         if newContentInsetTop != refreshContainerHeight {
             basicContentInsetTop = newContentInsetTop - refreshContainerHeight
@@ -318,14 +318,14 @@ public extension UIScrollView {
     // MARK: - Associated Keys
 
     private struct AssociatedKeys {
-        static var refreshingControlBlockKey: String = "PullToRefresh+refreshingControlBlockKey.Key"
+        static var pullToRefreshActionKey: String = "PullToRefresh+pullToRefreshActionKey.Key"
         static var pullToRefreshKey: String = "PullToRefresh+pullToRefreshKey.Key"
         static var contentOffsetObserverKey: String = "PullToRefresh+contentOffsetObserverKey.Key"
         static var contentInsetObserverKey: String = "PullToRefresh+contentInsetObserverKey.Key"
         static var basicContentInsetTopKey: String = "PullToRefresh+basicContentInsetTopKey.Key"
         static var staticContentInsetTopKey: String = "PullToRefresh+staticContentInsetTopKey.Key"
         static var adjustedContentInsetTopKey: String = "PullToRefresh+adjustedContentInsetTopKey.Key"
-        static var isControlRefreshingKey: String = "PullToRefresh+isControlRefreshingKey.Key"
+        static var isPullToRefreshingKey: String = "PullToRefresh+isPullToRefreshingKey.Key"
         static var isRefreshingFinishedKey: String = "PullToRefresh+isRefreshingFinishedKey.Key"
     }
 }

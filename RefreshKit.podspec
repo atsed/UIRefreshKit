@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "RefreshKit"
-  s.version      = "1.0.0"
+  s.version      = "1.1.0"
   s.summary      = "A custom pull to refresh and pagination library."
   s.description  = <<-DESC
                     RefreshKit is a custom library that provides custom pull to refresh and automatic pagination functionality for UIScrollView.

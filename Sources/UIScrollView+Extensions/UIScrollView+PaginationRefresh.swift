@@ -38,14 +38,14 @@ public extension UIScrollView {
     }
 
     @objc
-    var paginationRefreshingBlock: (() -> Void)? {
+    var paginationRefreshAction: (() -> Void)? {
         get {
-            withUnsafePointer(to: &AssociatedKeys.paginationRefreshingBlockKey) {
+            withUnsafePointer(to: &AssociatedKeys.paginationRefreshActionKey) {
                 objc_getAssociatedObject(self, $0) as? (() -> Void)? ?? nil
             }
         }
         set {
-            withUnsafePointer(to: &AssociatedKeys.paginationRefreshingBlockKey) {
+            withUnsafePointer(to: &AssociatedKeys.paginationRefreshActionKey) {
                 objc_setAssociatedObject(
                     self,
                     $0,
@@ -221,7 +221,7 @@ public extension UIScrollView {
                 self?.oldContentSizeHeight = scrollView.contentSize.height
                 self?.paginationRefreshState = .refreshing
                 self?.updateState()
-                self?.paginationRefreshingBlock?()
+                self?.paginationRefreshAction?()
             }
         })
 
@@ -295,7 +295,7 @@ public extension UIScrollView {
     // MARK: - Associated Keys
 
     private struct AssociatedKeys {
-        static var paginationRefreshingBlockKey: String = "PaginationRefresh+paginationRefreshingBlockKey.Key"
+        static var paginationRefreshActionKey: String = "PaginationRefresh+paginationRefreshActionKey.Key"
         static var paginationRefreshKey: String = "PaginationRefresh+paginationRefreshKey.Key"
         static var paginationRefreshStateKey: String = "PaginationRefresh+paginationRefreshStateKey.Key"
         static var contentOffsetObserverKey: String = "PaginationRefresh+contentOffsetObserverKey.Key"
