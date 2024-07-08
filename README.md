@@ -51,7 +51,7 @@ pod install
 
 ### PullToRefresh
 
-[View PullToRefresh Animation](https://atsed.github.io/RefreshKit/docs/PullToRefresh.html)
+[View PullToRefresh Animation](https://atsed.github.io/RefreshKit/PullToRefresh.html)
 
 To add `PullToRefresh` to your screen, you need to set the `pullToRefresh` property for your table/collection view. You can use `RefreshControl` for this or [create your own](#creating-a-custom-refreshcontrol):
 
@@ -89,7 +89,7 @@ collectionView.setRefreshControlStaticInsetTop(value: 10.0)
 
 ### Automatic Pagination
 
-[View Pagination Animation](https://atsed.github.io/RefreshKit/docs/Pagination.html)
+[View Pagination Animation](https://atsed.github.io/RefreshKit/Pagination.html)
 
 To add `Automatic Pagination` to your screen, you need to set the `paginationRefresh` property for your table/collection view. You can use `RefreshControl` for this or [create your own](#creating-a-custom-refreshcontrol):
 
