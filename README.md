@@ -20,7 +20,7 @@ To install `RefreshKit` using SPM, add the following to your `Package.swift` fil
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/atsed/RefreshKit.git", from: "1.0.1")
+    .package(url: "https://github.com/atsed/RefreshKit.git", from: "1.0.2")
 ]
 ```
 
@@ -51,7 +51,7 @@ pod install
 
 ### PullToRefresh
 
-![PullToRefresh Animation](./Images/PullToRefresh.mov)
+![PullToRefresh Animation](./Images/PullToRefresh.mp4)
 
 To add `PullToRefresh` to your screen, you need to set the `pullToRefresh` property for your table/collection view. You can use `RefreshControl` for this or [create your own](#creating-a-custom-refreshcontrol):
 
@@ -89,7 +89,7 @@ collectionView.setRefreshControlStaticInsetTop(value: 10.0)
 
 ### Automatic Pagination
 
-![Pagination Animation](./Images/Pagination.mov)
+![Pagination Animation](./Images/Pagination.mp4)
 
 To add `Automatic Pagination` to your screen, you need to set the `paginationRefresh` property for your table/collection view. You can use `RefreshControl` for this or [create your own](#creating-a-custom-refreshcontrol):
 
