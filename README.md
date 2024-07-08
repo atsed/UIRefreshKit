@@ -1,8 +1,9 @@
-# UIRefreshKit
+![UIRefreshKit](https://raw.githubusercontent.com/atsed/UIRefreshKit/main/Resources/UIRefreshKitLogo.png)
+
 [![Languages](https://img.shields.io/badge/languages-Swift%20%7C%20ObjC-red.svg)](https://img.shields.io/badge/languages-Swift%20%7C%20ObjC-red.svg)
 [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/UIRefreshKit.svg?style=flat)](https://img.shields.io/cocoapods/v/UIRefreshKit.svg?style=flat)
 [![Swift Package Manager](https://img.shields.io/badge/Swift_Package_Manager-compatible-orange?style=flat-square)](https://img.shields.io/badge/Swift_Package_Manager-compatible-orange?style=flat-square)
-[![License MIT](https://img.shields.io/cocoapods/l/UIRefreshKit.svg?style=flat)](https://raw.githubusercontent.com/atsed/UIRefreshKit/main/LICENSE)
+[![License MIT](http://img.shields.io/cocoapods/l/UIRefreshKit.svg?style=flat)](https://github.com/atsed/UIRefreshKit/blob/main/LICENSE)
 
 `UIRefreshKit` is a custom library that provides customizable pull-to-refresh and automatic pagination functionality for `UICollectionView` and `UITableView`.
 
