@@ -51,7 +51,12 @@ pod install
 
 ### PullToRefresh
 
-![PullToRefresh Animation](./Images/PullToRefresh.mov)
+<div style="text-align:center">
+  <video width="540" height="960" controls>
+    <source src="./Images/PullToRefresh.mov" type="video/mov">
+    Your browser does not support the video tag.
+  </video>
+</div>
 
 To add `PullToRefresh` to your screen, you need to set the `pullToRefresh` property for your table/collection view. You can use `RefreshControl` for this or [create your own](#creating-a-custom-refreshcontrol):
 
@@ -89,7 +94,12 @@ collectionView.setRefreshControlStaticInsetTop(value: 10.0)
 
 ### Automatic Pagination
 
-![Pagination Animation](./Images/Pagination.mov)
+<div style="text-align:center">
+  <video width="540" height="960" controls>
+    <source src="./Images/Pagination.mov" type="video/mov">
+    Your browser does not support the video tag.
+  </video>
+</div>
 
 To add `Automatic Pagination` to your screen, you need to set the `paginationRefresh` property for your table/collection view. You can use `RefreshControl` for this or [create your own](#creating-a-custom-refreshcontrol):
 
