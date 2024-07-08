@@ -1,6 +1,6 @@
 //
 //  BaseRefreshControl.swift
-//  RefreshKit
+//  UIRefreshKit
 //
 //  Created by Egor Korotkii on 7/7/24.
 //

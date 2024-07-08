@@ -1,10 +1,10 @@
-# RefreshKit
+# UIRefreshKit
 [![Languages](https://img.shields.io/badge/languages-Swift%20%7C%20ObjC-red.svg)](https://img.shields.io/badge/languages-Swift%20%7C%20ObjC-red.svg)
-[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/RefreshKit.svg?style=flat)](https://img.shields.io/cocoapods/v/RefreshKit.svg?style=flat)
+[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/UIRefreshKit.svg?style=flat)](https://img.shields.io/cocoapods/v/UIRefreshKit.svg?style=flat)
 [![Swift Package Manager](https://img.shields.io/badge/Swift_Package_Manager-compatible-orange?style=flat-square)](https://img.shields.io/badge/Swift_Package_Manager-compatible-orange?style=flat-square)
-[![License MIT](https://img.shields.io/cocoapods/l/RefreshKit.svg?style=flat)](https://raw.githubusercontent.com/atsed/RefreshKit/main/LICENSE)
+[![License MIT](https://img.shields.io/cocoapods/l/UIRefreshKit.svg?style=flat)](https://raw.githubusercontent.com/atsed/UIRefreshKit/main/LICENSE)
 
-`RefreshKit` is a custom library that provides customizable pull-to-refresh and automatic pagination functionality for `UICollectionView` and `UITableView`.
+`UIRefreshKit` is a custom library that provides customizable pull-to-refresh and automatic pagination functionality for `UICollectionView` and `UITableView`.
 
 ## Features
 
@@ -16,29 +16,29 @@
 
 ### Swift Package Manager (SPM)
 
-To install `RefreshKit` using SPM, add the following to your `Package.swift` file:
+To install `UIRefreshKit` using SPM, add the following to your `Package.swift` file:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/atsed/RefreshKit.git", from: "1.1.0")
+    .package(url: "https://github.com/atsed/UIRefreshKit.git", from: "2.0.0")
 ]
 ```
 
-Then, in the target dependencies section, include `RefreshKit`:
+Then, in the target dependencies section, include `UIRefreshKit`:
 
 ```swift
 .target(
     name: "YourTargetName",
-    dependencies: ["RefreshKit"]
+    dependencies: ["UIRefreshKit"]
 )
 ```
 
 ### CocoaPods
 
-To install `RefreshKit` using CocoaPods, add the following to your `Podfile`:
+To install `UIRefreshKit` using CocoaPods, add the following to your `Podfile`:
 
 ```ruby
-pod 'RefreshKit'
+pod 'UIRefreshKit', '~> 2.0.0'
 ```
 
 Then run:
@@ -51,7 +51,7 @@ pod install
 
 ### PullToRefresh
 
-[View PullToRefresh Animation](https://atsed.github.io/RefreshKit/PullToRefresh.html)
+[View PullToRefresh Animation](https://atsed.github.io/UIRefreshKit/PullToRefresh.html)
 
 To add `PullToRefresh` to your screen, you need to set the `pullToRefresh` property for your table/collection view. You can use `RefreshControl` for this or [create your own](#creating-a-custom-refreshcontrol):
 
@@ -89,7 +89,7 @@ collectionView.setPullToRefreshStaticInsetTop(value: 10.0)
 
 ### Automatic Pagination
 
-[View Pagination Animation](https://atsed.github.io/RefreshKit/Pagination.html)
+[View Pagination Animation](https://atsed.github.io/UIRefreshKit/Pagination.html)
 
 To add `Automatic Pagination` to your screen, you need to set the `paginationRefresh` property for your table/collection view. You can use `RefreshControl` for this or [create your own](#creating-a-custom-refreshcontrol):
 
@@ -151,11 +151,11 @@ class CustomRefreshControl: BaseRefreshControl {
 
 ## Example
 
-Here is a basic example of how to use `RefreshKit` in a view controller:
+Here is a basic example of how to use `UIRefreshKit` in a view controller:
 
 ```swift
 import UIKit
-import RefreshKit
+import UIRefreshKit
 
 class ViewController: UIViewController {
 
@@ -185,4 +185,4 @@ class ViewController: UIViewController {
 
 ## License
 
-`RefreshKit` is available under the MIT license. See the [LICENSE](LICENSE) file for more info.
+`UIRefreshKit` is available under the MIT license. See the [LICENSE](LICENSE) file for more info.

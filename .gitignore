@@ -1,0 +1,27 @@
+# Ignore build products
+build/
+DerivedData/
+
+# Ignore Xcode workspace user settings
+*.xcworkspace
+*.xcuserdata
+*.xcuserstate
+*.xcscheme
+
+# Ignore Pods directory
+Pods/
+
+# Ignore Swift Package Manager directories
+/.build/
+/Packages/
+/.swiftpm/
+
+# Ignore fastlane directory
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+
+# Ignore CocoaPods generated files
+Podfile.lock
+Pods/

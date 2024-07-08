@@ -2,13 +2,13 @@
 import PackageDescription
 
 let package = Package(
-    name: "RefreshKit",
+    name: "UIRefreshKit",
     products: [
-        .library(name: "RefreshKit", targets: ["RefreshKit"]),
+        .library(name: "UIRefreshKit", targets: ["UIRefreshKit"]),
     ],
     targets: [
         .target(
-            name: "RefreshKit",
+            name: "UIRefreshKit",
             path: "Sources"
         )
     ]
