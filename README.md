@@ -53,7 +53,7 @@ pod install
 
 <div style="text-align:center">
   <video width="540" height="960" controls>
-    <source src="./Images/PullToRefresh.mov" type="video/mov">
+    <source src="./Images/PullToRefresh.mov" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 </div>
@@ -96,7 +96,7 @@ collectionView.setRefreshControlStaticInsetTop(value: 10.0)
 
 <div style="text-align:center">
   <video width="540" height="960" controls>
-    <source src="./Images/Pagination.mov" type="video/mov">
+    <source src="./Images/Pagination.mov" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 </div>
