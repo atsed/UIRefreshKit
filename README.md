@@ -184,6 +184,10 @@ class ViewController: UIViewController {
 }
 ```
 
+## Projects Using UIRefreshKit
+
+[![Youla](https://raw.githubusercontent.com/atsed/UIRefreshKit/main/Resources/YoulaIcon.png)](https://apps.apple.com/vn/app/юла-объявления-рядом-с-вами/id1016489154)
+
 ## License
 
 `UIRefreshKit` is available under the MIT license. See the [LICENSE](LICENSE) file for more info.
